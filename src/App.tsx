@@ -1,15 +1,37 @@
 import { useState, useEffect } from 'react'
-import { Car, MapPin, Shield, Users, Wallet, Star, ArrowRight, Menu, X, CircleCheck as CheckCircle, Phone, MessageCircle, Clock, Navigation, Heart } from 'lucide-react'
+import { Car, MapPin, Shield, Users, Wallet, Star, ArrowRight, Menu, X, CircleCheck as CheckCircle, Phone, MessageCircle, Clock, Navigation, Heart, Mail, Send } from 'lucide-react'
+
+const SUPPORT_EMAIL = 'support@nioudem.sn'
+const WHATSAPP_NUMBER = '221XXXXXXXXX' // Remplacer par votre numero WhatsApp (format international sans +)
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [supportForm, setSupportForm] = useState({ name: '', email: '', subject: '', message: '' })
+  const [formSent, setFormSent] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  function handleSupportSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    const { name, email, subject, message } = supportForm
+    const body = encodeURIComponent(
+      `Nom: ${name}\nEmail: ${email}\n\n${message}`
+    )
+    const mailtoUrl = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject || 'Demande de support - Nioudem')}&body=${body}`
+    window.location.href = mailtoUrl
+    setFormSent(true)
+    setTimeout(() => setFormSent(false), 5000)
+  }
+
+  function handleWhatsApp() {
+    const text = encodeURIComponent('Bonjour, j\'ai besoin d\'aide avec Nioudem.')
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank')
+  }
 
   return (
     <>
@@ -28,6 +50,7 @@ function App() {
             <a href="#how-it-works" onClick={() => setMenuOpen(false)}>Comment ca marche</a>
             <a href="#routes" onClick={() => setMenuOpen(false)}>Trajets</a>
             <a href="#safety" onClick={() => setMenuOpen(false)}>Securite</a>
+            <a href="#support" onClick={() => setMenuOpen(false)}>Support</a>
             <a href="#download" className="nav-cta" onClick={() => setMenuOpen(false)}>Telecharger</a>
           </nav>
 
@@ -285,6 +308,121 @@ function App() {
         </div>
       </section>
 
+      {/* Support */}
+      <section className="support" id="support">
+        <div className="section-header">
+          <span className="section-tag">Support</span>
+          <h2 className="section-title">Comment pouvons-nous vous aider ?</h2>
+          <p className="section-desc">
+            Notre equipe est disponible pour repondre a toutes vos questions et vous accompagner.
+          </p>
+        </div>
+
+        <div className="support-content">
+          <div className="support-channels">
+            <div className="support-channel-card whatsapp" onClick={handleWhatsApp}>
+              <div className="support-channel-icon">
+                <MessageCircle size={28} />
+              </div>
+              <div className="support-channel-body">
+                <h3>Chat WhatsApp</h3>
+                <p>Discutez en direct avec notre equipe via WhatsApp. Reponse rapide garantie.</p>
+                <span className="support-channel-action">
+                  Ouvrir WhatsApp <ArrowRight size={16} />
+                </span>
+              </div>
+            </div>
+
+            <div className="support-channel-card email" onClick={() => document.getElementById('support-form')?.scrollIntoView({ behavior: 'smooth' })}>
+              <div className="support-channel-icon">
+                <Mail size={28} />
+              </div>
+              <div className="support-channel-body">
+                <h3>Email</h3>
+                <p>Envoyez-nous un message detaille et nous vous repondrons dans les 24h.</p>
+                <span className="support-channel-action">
+                  Remplir le formulaire <ArrowRight size={16} />
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <form
+            id="support-form"
+            className="support-form"
+            onSubmit={handleSupportSubmit}
+          >
+            <h3 className="support-form-title">Envoyez-nous un message</h3>
+
+            {formSent && (
+              <div className="support-form-success">
+                <CheckCircle size={20} />
+                Votre client mail s'est ouvert avec votre message. Merci de l'envoyer pour nous contacter !
+              </div>
+            )}
+
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="support-name">Votre nom</label>
+                <input
+                  id="support-name"
+                  type="text"
+                  placeholder="Ex: Amadou Diop"
+                  required
+                  value={supportForm.name}
+                  onChange={e => setSupportForm(f => ({ ...f, name: e.target.value }))}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="support-email">Votre email</label>
+                <input
+                  id="support-email"
+                  type="email"
+                  placeholder="Ex: amadou@email.com"
+                  required
+                  value={supportForm.email}
+                  onChange={e => setSupportForm(f => ({ ...f, email: e.target.value }))}
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="support-subject">Sujet</label>
+              <input
+                id="support-subject"
+                type="text"
+                placeholder="Ex: Probleme de reservation, paiement..."
+                value={supportForm.subject}
+                onChange={e => setSupportForm(f => ({ ...f, subject: e.target.value }))}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="support-message">Decrivez votre besoin <span className="form-required">*</span></label>
+              <textarea
+                id="support-message"
+                rows={5}
+                placeholder="Expliquez en detail votre probleme ou votre demande. Plus vous etes precis, plus nous pourrons vous aider efficacement."
+                required
+                value={supportForm.message}
+                onChange={e => setSupportForm(f => ({ ...f, message: e.target.value }))}
+              />
+            </div>
+
+            <div className="support-form-footer">
+              <button type="submit" className="btn-primary support-submit">
+                <Send size={18} />
+                Envoyer le message
+              </button>
+              <button type="button" className="btn-whatsapp" onClick={handleWhatsApp}>
+                <MessageCircle size={18} />
+                Ou via WhatsApp
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="cta" id="download">
         <div className="cta-card">
@@ -331,7 +469,7 @@ function App() {
                 <li><a href="#">A propos</a></li>
                 <li><a href="#">Carrieres</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#support">Contact</a></li>
               </ul>
             </div>
 
