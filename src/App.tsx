@@ -474,6 +474,20 @@ function App() {
             </div>
 
             <div className="footer-col">
+              <h4>Support</h4>
+              <ul>
+                <li><a href="#support">Centre d'aide</a></li>
+                <li><a href="#support">Formulaire de contact</a></li>
+                <li>
+                  <a href="#support" onClick={e => { e.preventDefault(); handleWhatsApp() }}>
+                    WhatsApp
+                  </a>
+                </li>
+                <li><a href={`mailto:${SUPPORT_EMAIL}`}>Email support</a></li>
+              </ul>
+            </div>
+
+            <div className="footer-col">
               <h4>Legal</h4>
               <ul>
                 <li><a href="#">CGU</a></li>
