@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Car, MapPin, Shield, Users, Wallet, Star, ArrowRight, Menu, X, CircleCheck as CheckCircle, Phone, MessageCircle, Clock, Navigation, Heart, Mail, Send } from 'lucide-react'
 
-const SUPPORT_EMAIL = 'support@nioudem.sn'
+const SUPPORT_EMAIL = 'support@andal.sn'
 const WHATSAPP_NUMBER = '221XXXXXXXXX' // Remplacer par votre numero WhatsApp (format international sans +)
 
 function App() {
@@ -22,14 +22,14 @@ function App() {
     const body = encodeURIComponent(
       `Nom: ${name}\nEmail: ${email}\n\n${message}`
     )
-    const mailtoUrl = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject || 'Demande de support - Nioudem')}&body=${body}`
+    const mailtoUrl = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject || 'Demande de support - Andal')}&body=${body}`
     window.location.href = mailtoUrl
     setFormSent(true)
     setTimeout(() => setFormSent(false), 5000)
   }
 
   function handleWhatsApp() {
-    const text = encodeURIComponent('Bonjour, j\'ai besoin d\'aide avec Nioudem.')
+    const text = encodeURIComponent('Bonjour, j\'ai besoin d\'aide avec Andal.')
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank')
   }
 
@@ -42,7 +42,7 @@ function App() {
             <div className="logo-icon">
               <Car size={22} color="#fff" />
             </div>
-            <span className="logo-text">Nioudem</span>
+            <span className="logo-text">Andal</span>
           </div>
 
           <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
@@ -68,7 +68,7 @@ function App() {
             Disponible au Senegal
           </div>
           <h1>
-            Voyagez ensemble avec <span className="highlight">Nioudem</span>
+            Voyagez ensemble avec <span className="highlight">Andal</span>
           </h1>
           <p className="hero-subtitle">
             La plateforme de covoiturage qui connecte les villes du Senegal.
@@ -112,7 +112,7 @@ function App() {
           <span className="section-tag">Fonctionnalites</span>
           <h2 className="section-title">Tout ce dont vous avez besoin pour voyager sereinement</h2>
           <p className="section-desc">
-            Nioudem offre une experience complete pour les conducteurs et les passagers.
+            Andal offre une experience complete pour les conducteurs et les passagers.
           </p>
         </div>
 
@@ -222,7 +222,7 @@ function App() {
           <span className="section-tag">Trajets populaires</span>
           <h2 className="section-title">Les routes les plus empruntees</h2>
           <p className="section-desc">
-            Decouvrez les trajets les plus demandes par la communaute Nioudem.
+            Decouvrez les trajets les plus demandes par la communaute Andal.
           </p>
         </div>
 
@@ -256,7 +256,7 @@ function App() {
           <span className="section-tag">Securite</span>
           <h2 className="section-title">Votre securite, notre priorite</h2>
           <p className="section-desc">
-            Nioudem met en place des mesures concretes pour assurer des trajets en toute confiance.
+            Andal met en place des mesures concretes pour assurer des trajets en toute confiance.
           </p>
         </div>
 
@@ -426,7 +426,7 @@ function App() {
       {/* CTA */}
       <section className="cta" id="download">
         <div className="cta-card">
-          <h2>Pret a voyager avec Nioudem ?</h2>
+          <h2>Pret a voyager avec Andal ?</h2>
           <p>
             Rejoignez des milliers de voyageurs qui partagent deja leurs trajets au Senegal.
           </p>
@@ -446,7 +446,7 @@ function App() {
                 <div className="logo-icon">
                   <Car size={20} color="#fff" />
                 </div>
-                <span className="logo-text" style={{ color: '#fff' }}>Nioudem</span>
+                <span className="logo-text" style={{ color: '#fff' }}>Andal</span>
               </div>
               <p>
                 La plateforme de covoiturage qui connecte les villes du Senegal. Voyagez ensemble, partagez les frais.
@@ -498,7 +498,7 @@ function App() {
           </div>
 
           <div className="footer-bottom">
-            <p>2026 Nioudem. Tous droits reserves.</p>
+            <p>2026 Andal. Tous droits reserves.</p>
             <div className="footer-socials">
               <a href="#" className="footer-social">
                 <Heart size={16} />
