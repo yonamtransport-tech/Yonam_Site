@@ -9,6 +9,8 @@ function App() {
   const [scrolled, setScrolled] = useState(false)
   const [supportForm, setSupportForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [formSent, setFormSent] = useState(false)
+  const [formError, setFormError] = useState('')
+  const [sending, setSending] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -16,16 +18,29 @@ function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  function handleSupportSubmit(e: React.FormEvent) {
+  async function handleSupportSubmit(e: React.FormEvent) {
     e.preventDefault()
-    const { name, email, subject, message } = supportForm
-    const body = encodeURIComponent(
-      `Nom: ${name}\nEmail: ${email}\n\n${message}`
-    )
-    const mailtoUrl = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject || 'Demande de support - Andal')}&body=${body}`
-    window.location.href = mailtoUrl
-    setFormSent(true)
-    setTimeout(() => setFormSent(false), 5000)
+    setFormError('')
+    setSending(true)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(supportForm),
+      })
+
+      if (!response.ok) {
+        throw new Error('request_failed')
+      }
+
+      setSupportForm({ name: '', email: '', subject: '', message: '' })
+      setFormSent(true)
+      setTimeout(() => setFormSent(false), 5000)
+    } catch {
+      setFormError("L'envoi a echoue. Merci de reessayer ou de nous contacter via WhatsApp.")
+    } finally {
+      setSending(false)
+    }
   }
 
   function handleWhatsApp() {
@@ -357,7 +372,13 @@ function App() {
             {formSent && (
               <div className="support-form-success">
                 <CheckCircle size={20} />
-                Votre client mail s'est ouvert avec votre message. Merci de l'envoyer pour nous contacter !
+                Votre message a bien ete envoye. Notre equipe vous repondra sous 24h !
+              </div>
+            )}
+
+            {formError && (
+              <div className="support-form-error">
+                {formError}
               </div>
             )}
 
@@ -410,9 +431,9 @@ function App() {
             </div>
 
             <div className="support-form-footer">
-              <button type="submit" className="btn-primary support-submit">
+              <button type="submit" className="btn-primary support-submit" disabled={sending}>
                 <Send size={18} />
-                Envoyer le message
+                {sending ? 'Envoi en cours...' : 'Envoyer le message'}
               </button>
               <button type="button" className="btn-whatsapp" onClick={handleWhatsApp}>
                 <MessageCircle size={18} />
