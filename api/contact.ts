@@ -40,7 +40,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'Configuration serveur manquante' })
   }
 
-  const safeSubject = (typeof subject === 'string' && subject.trim()) || 'Nouveau message depuis le site Andal'
+  const safeSubject = (typeof subject === 'string' && subject.trim()) || 'Nouveau message depuis le site Yonam'
 
   try {
     const resendResponse = await fetch(RESEND_API_URL, {
@@ -50,7 +50,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: `Andal <${FROM_EMAIL}>`,
+        from: `Yonam <${FROM_EMAIL}>`,
         to: [TO_EMAIL],
         reply_to: email,
         subject: safeSubject,

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Car, MapPin, Shield, Users, Wallet, Star, ArrowRight, Menu, X, CircleCheck as CheckCircle, Phone, MessageCircle, Clock, Navigation, Heart, Mail, Send } from 'lucide-react'
 
-const SUPPORT_EMAIL = 'support@andal.sn'
+const SUPPORT_EMAIL = 'support@yonam.sn'
 const WHATSAPP_NUMBER = '221XXXXXXXXX' // Remplacer par votre numero WhatsApp (format international sans +)
 
 function App() {
@@ -44,23 +44,23 @@ function App() {
   }
 
   function handleWhatsApp() {
-    const text = encodeURIComponent('Bonjour, j\'ai besoin d\'aide avec Andal.')
+    const text = encodeURIComponent('Bonjour, j\'ai besoin d\'aide avec Yonam.')
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank')
   }
 
   return (
     <>
       {/* Header */}
-      <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+      <header className={`header glass ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-inner">
           <div className="logo">
             <div className="logo-icon">
               <Car size={22} color="#fff" />
             </div>
-            <span className="logo-text">Andal</span>
+            <span className="logo-text">Yonam</span>
           </div>
 
-          <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <nav className={`nav-links ${menuOpen ? 'open glass' : ''}`}>
             <a href="#features" onClick={() => setMenuOpen(false)}>Fonctionnalites</a>
             <a href="#how-it-works" onClick={() => setMenuOpen(false)}>Comment ca marche</a>
             <a href="#routes" onClick={() => setMenuOpen(false)}>Trajets</a>
@@ -78,12 +78,12 @@ function App() {
       {/* Hero */}
       <section className="hero">
         <div className="hero-content">
-          <div className="hero-badge">
+          <div className="hero-badge glass">
             <span className="hero-badge-dot" />
             Disponible au Senegal
           </div>
           <h1>
-            Voyagez ensemble avec <span className="highlight">Andal</span>
+            Voyagez ensemble avec <span className="highlight">Yonam</span>
           </h1>
           <p className="hero-subtitle">
             La plateforme de covoiturage qui connecte les villes du Senegal.
@@ -127,12 +127,12 @@ function App() {
           <span className="section-tag">Fonctionnalites</span>
           <h2 className="section-title">Tout ce dont vous avez besoin pour voyager sereinement</h2>
           <p className="section-desc">
-            Andal offre une experience complete pour les conducteurs et les passagers.
+            Yonam offre une experience complete pour les conducteurs et les passagers.
           </p>
         </div>
 
         <div className="features-grid">
-          <div className="feature-card">
+          <div className="feature-card glass">
             <div className="feature-icon pink">
               <MapPin size={24} />
             </div>
@@ -142,7 +142,7 @@ function App() {
             </p>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card glass">
             <div className="feature-icon green">
               <Wallet size={24} />
             </div>
@@ -152,7 +152,7 @@ function App() {
             </p>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card glass">
             <div className="feature-icon blue">
               <Shield size={24} />
             </div>
@@ -162,7 +162,7 @@ function App() {
             </p>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card glass">
             <div className="feature-icon orange">
               <MessageCircle size={24} />
             </div>
@@ -172,7 +172,7 @@ function App() {
             </p>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card glass">
             <div className="feature-icon teal">
               <Navigation size={24} />
             </div>
@@ -182,7 +182,7 @@ function App() {
             </p>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card glass">
             <div className="feature-icon red">
               <Clock size={24} />
             </div>
@@ -237,7 +237,7 @@ function App() {
           <span className="section-tag">Trajets populaires</span>
           <h2 className="section-title">Les routes les plus empruntees</h2>
           <p className="section-desc">
-            Decouvrez les trajets les plus demandes par la communaute Andal.
+            Decouvrez les trajets les plus demandes par la communaute Yonam.
           </p>
         </div>
 
@@ -252,7 +252,7 @@ function App() {
             { from: 'Thies', to: 'Mbour', price: '1 500 FCFA' },
             { from: 'Saint-Louis', to: 'Louga', price: '2 000 FCFA' },
           ].map((route) => (
-            <div className="route-card" key={`${route.from}-${route.to}`}>
+            <div className="route-card glass" key={`${route.from}-${route.to}`}>
               <div className="route-icon">
                 <MapPin size={20} />
               </div>
@@ -271,7 +271,7 @@ function App() {
           <span className="section-tag">Securite</span>
           <h2 className="section-title">Votre securite, notre priorite</h2>
           <p className="section-desc">
-            Andal met en place des mesures concretes pour assurer des trajets en toute confiance.
+            Yonam met en place des mesures concretes pour assurer des trajets en toute confiance.
           </p>
         </div>
 
@@ -364,7 +364,7 @@ function App() {
 
           <form
             id="support-form"
-            className="support-form"
+            className="support-form glass"
             onSubmit={handleSupportSubmit}
           >
             <h3 className="support-form-title">Envoyez-nous un message</h3>
@@ -447,7 +447,7 @@ function App() {
       {/* CTA */}
       <section className="cta" id="download">
         <div className="cta-card">
-          <h2>Pret a voyager avec Andal ?</h2>
+          <h2>Pret a voyager avec Yonam ?</h2>
           <p>
             Rejoignez des milliers de voyageurs qui partagent deja leurs trajets au Senegal.
           </p>
@@ -467,7 +467,7 @@ function App() {
                 <div className="logo-icon">
                   <Car size={20} color="#fff" />
                 </div>
-                <span className="logo-text" style={{ color: '#fff' }}>Andal</span>
+                <span className="logo-text" style={{ color: '#fff' }}>Yonam</span>
               </div>
               <p>
                 La plateforme de covoiturage qui connecte les villes du Senegal. Voyagez ensemble, partagez les frais.
@@ -519,7 +519,7 @@ function App() {
           </div>
 
           <div className="footer-bottom">
-            <p>2026 Andal. Tous droits reserves.</p>
+            <p>2026 Yonam. Tous droits reserves.</p>
             <div className="footer-socials">
               <a href="#" className="footer-social">
                 <Heart size={16} />
