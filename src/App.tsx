@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Car, MapPin, Shield, Users, Wallet, Star, ArrowRight, Menu, X, CircleCheck as CheckCircle, Phone, MessageCircle, Clock, Navigation, Heart, Mail, Send } from 'lucide-react'
 
 const SUPPORT_EMAIL = 'support@yonam.sn'
-const WHATSAPP_NUMBER = '221XXXXXXXXX' // Remplacer par votre numero WhatsApp (format international sans +)
+const WHATSAPP_NUMBER = '221XXXXXXXXX' // Remplacer par votre numéro WhatsApp (format international sans +)
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -37,7 +37,7 @@ function App() {
       setFormSent(true)
       setTimeout(() => setFormSent(false), 5000)
     } catch {
-      setFormError("L'envoi a echoue. Merci de reessayer ou de nous contacter via WhatsApp.")
+      setFormError("L'envoi a échoué. Merci de réessayer ou de nous contacter via WhatsApp.")
     } finally {
       setSending(false)
     }
@@ -61,12 +61,12 @@ function App() {
           </div>
 
           <nav className={`nav-links ${menuOpen ? 'open glass' : ''}`}>
-            <a href="#features" onClick={() => setMenuOpen(false)}>Fonctionnalites</a>
-            <a href="#how-it-works" onClick={() => setMenuOpen(false)}>Comment ca marche</a>
+            <a href="#features" onClick={() => setMenuOpen(false)}>Fonctionnalités</a>
+            <a href="#how-it-works" onClick={() => setMenuOpen(false)}>Comment ça marche</a>
             <a href="#routes" onClick={() => setMenuOpen(false)}>Trajets</a>
-            <a href="#safety" onClick={() => setMenuOpen(false)}>Securite</a>
+            <a href="#safety" onClick={() => setMenuOpen(false)}>Sécurité</a>
             <a href="#support" onClick={() => setMenuOpen(false)}>Support</a>
-            <a href="#download" className="nav-cta" onClick={() => setMenuOpen(false)}>Telecharger</a>
+            <a href="#download" className="nav-cta" onClick={() => setMenuOpen(false)}>Télécharger</a>
           </nav>
 
           <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
@@ -80,14 +80,14 @@ function App() {
         <div className="hero-content">
           <div className="hero-badge glass">
             <span className="hero-badge-dot" />
-            Disponible au Senegal
+            Disponible au Sénégal
           </div>
           <h1>
             Voyagez ensemble avec <span className="highlight">Yonam</span>
           </h1>
           <p className="hero-subtitle">
-            La plateforme de covoiturage qui connecte les villes du Senegal.
-            Partagez les frais, reduisez votre empreinte carbone et voyagez en toute confiance.
+            La plateforme de covoiturage qui connecte les villes du Sénégal.
+            Partagez les frais, réduisez votre empreinte carbone et voyagez en toute confiance.
           </p>
           <div className="hero-ctas">
             <a href="#download" className="btn-primary">
@@ -115,7 +115,7 @@ function App() {
             </div>
             <div className="hero-stat">
               <div className="hero-stat-value">-60%</div>
-              <div className="hero-stat-label">Economies sur vos trajets</div>
+              <div className="hero-stat-label">Économies sur vos trajets</div>
             </div>
           </div>
         </div>
@@ -124,10 +124,10 @@ function App() {
       {/* Features */}
       <section className="features" id="features">
         <div className="section-header">
-          <span className="section-tag">Fonctionnalites</span>
+          <span className="section-tag">Fonctionnalités</span>
           <h2 className="section-title">Tout ce dont vous avez besoin pour voyager sereinement</h2>
           <p className="section-desc">
-            Yonam offre une experience complete pour les conducteurs et les passagers.
+            Yonam offre une expérience complète pour les conducteurs et les passagers.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ function App() {
             </div>
             <h3 className="feature-title">Trajets entre villes</h3>
             <p className="feature-desc">
-              Trouvez des trajets entre toutes les grandes villes du Senegal : Dakar, Thies, Saint-Louis, Ziguinchor et bien plus.
+              Trouvez des trajets entre toutes les grandes villes du Sénégal : Dakar, Thiès, Saint-Louis, Ziguinchor et bien plus.
             </p>
           </div>
 
@@ -148,7 +148,7 @@ function App() {
             </div>
             <h3 className="feature-title">Paiement flexible</h3>
             <p className="feature-desc">
-              Payez en especes, par Orange Money, Wave ou via le portefeuille integre. Simple et securise.
+              Payez en espèces, par Orange Money, Wave ou via le portefeuille intégré. Simple et sécurisé.
             </p>
           </div>
 
@@ -156,9 +156,9 @@ function App() {
             <div className="feature-icon blue">
               <Shield size={24} />
             </div>
-            <h3 className="feature-title">Profils verifies</h3>
+            <h3 className="feature-title">Profils vérifiés</h3>
             <p className="feature-desc">
-              Verification d'identite, avis et notes entre utilisateurs pour une communaute de confiance.
+              Vérification d'identité, avis et notes entre utilisateurs pour une communauté de confiance.
             </p>
           </div>
 
@@ -166,9 +166,9 @@ function App() {
             <div className="feature-icon orange">
               <MessageCircle size={24} />
             </div>
-            <h3 className="feature-title">Messagerie integree</h3>
+            <h3 className="feature-title">Messagerie intégrée</h3>
             <p className="feature-desc">
-              Communiquez directement avec votre conducteur ou passager pour organiser les details du trajet.
+              Communiquez directement avec votre conducteur ou passager pour organiser les détails du trajet.
             </p>
           </div>
 
@@ -176,9 +176,9 @@ function App() {
             <div className="feature-icon teal">
               <Navigation size={24} />
             </div>
-            <h3 className="feature-title">Suivi en temps reel</h3>
+            <h3 className="feature-title">Suivi en temps réel</h3>
             <p className="feature-desc">
-              Suivez votre trajet en direct. Partagez votre position avec vos proches pour plus de tranquillite.
+              Suivez votre trajet en direct. Partagez votre position avec vos proches pour plus de tranquillité.
             </p>
           </div>
 
@@ -186,9 +186,9 @@ function App() {
             <div className="feature-icon red">
               <Clock size={24} />
             </div>
-            <h3 className="feature-title">Notifications en temps reel</h3>
+            <h3 className="feature-title">Notifications en temps réel</h3>
             <p className="feature-desc">
-              Reservations, messages, departs imminents : ne manquez plus aucune information importante.
+              Réservations, messages, départs imminents : ne manquez plus aucune information importante.
             </p>
           </div>
         </div>
@@ -197,10 +197,10 @@ function App() {
       {/* How it works */}
       <section className="how-it-works" id="how-it-works">
         <div className="section-header">
-          <span className="section-tag">Comment ca marche</span>
+          <span className="section-tag">Comment ça marche</span>
           <h2 className="section-title">Simple comme bonjour</h2>
           <p className="section-desc">
-            En 3 etapes, trouvez votre covoiturage ou publiez votre trajet.
+            En 3 étapes, trouvez votre covoiturage ou publiez votre trajet.
           </p>
         </div>
 
@@ -209,15 +209,15 @@ function App() {
             <div className="step-number">1</div>
             <h3 className="step-title">Recherchez</h3>
             <p className="step-desc">
-              Entrez votre ville de depart, votre destination et la date souhaitee. Parcourez les trajets disponibles.
+              Entrez votre ville de départ, votre destination et la date souhaitée. Parcourez les trajets disponibles.
             </p>
             <div className="step-connector" />
           </div>
           <div className="step">
             <div className="step-number">2</div>
-            <h3 className="step-title">Reservez</h3>
+            <h3 className="step-title">Réservez</h3>
             <p className="step-desc">
-              Choisissez le trajet qui vous convient et reservez votre place en un clic. Contactez le conducteur si besoin.
+              Choisissez le trajet qui vous convient et réservez votre place en un clic. Contactez le conducteur si besoin.
             </p>
             <div className="step-connector" />
           </div>
@@ -225,7 +225,7 @@ function App() {
             <div className="step-number">3</div>
             <h3 className="step-title">Voyagez</h3>
             <p className="step-desc">
-              Retrouvez-vous au point de rendez-vous et profitez du trajet. Laissez un avis apres votre arrivee.
+              Retrouvez-vous au point de rendez-vous et profitez du trajet. Laissez un avis après votre arrivée.
             </p>
           </div>
         </div>
@@ -235,21 +235,21 @@ function App() {
       <section className="routes" id="routes">
         <div className="section-header">
           <span className="section-tag">Trajets populaires</span>
-          <h2 className="section-title">Les routes les plus empruntees</h2>
+          <h2 className="section-title">Les routes les plus empruntées</h2>
           <p className="section-desc">
-            Decouvrez les trajets les plus demandes par la communaute Yonam.
+            Découvrez les trajets les plus demandés par la communauté Yonam.
           </p>
         </div>
 
         <div className="routes-grid">
           {[
-            { from: 'Dakar', to: 'Thies', price: '2 500 FCFA' },
+            { from: 'Dakar', to: 'Thiès', price: '2 500 FCFA' },
             { from: 'Dakar', to: 'Saint-Louis', price: '5 000 FCFA' },
             { from: 'Dakar', to: 'Mbour', price: '3 000 FCFA' },
             { from: 'Dakar', to: 'Kaolack', price: '4 500 FCFA' },
             { from: 'Dakar', to: 'Touba', price: '4 000 FCFA' },
             { from: 'Dakar', to: 'Ziguinchor', price: '8 000 FCFA' },
-            { from: 'Thies', to: 'Mbour', price: '1 500 FCFA' },
+            { from: 'Thiès', to: 'Mbour', price: '1 500 FCFA' },
             { from: 'Saint-Louis', to: 'Louga', price: '2 000 FCFA' },
           ].map((route) => (
             <div className="route-card glass" key={`${route.from}-${route.to}`}>
@@ -258,7 +258,7 @@ function App() {
               </div>
               <div className="route-info">
                 <div className="route-name">{route.from} → {route.to}</div>
-                <div className="route-price">A partir de {route.price}</div>
+                <div className="route-price">À partir de {route.price}</div>
               </div>
             </div>
           ))}
@@ -268,10 +268,10 @@ function App() {
       {/* Safety */}
       <section className="safety" id="safety">
         <div className="section-header">
-          <span className="section-tag">Securite</span>
-          <h2 className="section-title">Votre securite, notre priorite</h2>
+          <span className="section-tag">Sécurité</span>
+          <h2 className="section-title">Votre sécurité, notre priorité</h2>
           <p className="section-desc">
-            Yonam met en place des mesures concretes pour assurer des trajets en toute confiance.
+            Yonam met en place des mesures concrètes pour assurer des trajets en toute confiance.
           </p>
         </div>
 
@@ -282,8 +282,8 @@ function App() {
                 <CheckCircle size={20} />
               </div>
               <div className="safety-item-text">
-                <h4>Verification d'identite</h4>
-                <p>Chaque conducteur peut verifier son identite avec une piece officielle et un selfie pour obtenir le badge de confiance.</p>
+                <h4>Vérification d'identité</h4>
+                <p>Chaque conducteur peut vérifier son identité avec une pièce officielle et un selfie pour obtenir le badge de confiance.</p>
               </div>
             </li>
             <li className="safety-item">
@@ -291,8 +291,8 @@ function App() {
                 <Phone size={20} />
               </div>
               <div className="safety-item-text">
-                <h4>Numero verifie</h4>
-                <p>Les numeros de telephone sont verifies par SMS pour garantir la joignabilite de chaque membre.</p>
+                <h4>Numéro vérifié</h4>
+                <p>Les numéros de téléphone sont vérifiés par SMS pour garantir la joignabilité de chaque membre.</p>
               </div>
             </li>
             <li className="safety-item">
@@ -300,8 +300,8 @@ function App() {
                 <Star size={20} />
               </div>
               <div className="safety-item-text">
-                <h4>Avis et evaluations</h4>
-                <p>Un systeme de notes bidirectionnel permet de connaitre la reputation de chaque utilisateur avant de voyager.</p>
+                <h4>Avis et évaluations</h4>
+                <p>Un système de notes bidirectionnel permet de connaître la réputation de chaque utilisateur avant de voyager.</p>
               </div>
             </li>
             <li className="safety-item">
@@ -310,7 +310,7 @@ function App() {
               </div>
               <div className="safety-item-text">
                 <h4>Bouton SOS</h4>
-                <p>En cas d'urgence, un bouton SOS permet d'alerter instantanement notre equipe et vos contacts de confiance.</p>
+                <p>En cas d'urgence, un bouton SOS permet d'alerter instantanément notre équipe et vos contacts de confiance.</p>
               </div>
             </li>
           </ul>
@@ -329,7 +329,7 @@ function App() {
           <span className="section-tag">Support</span>
           <h2 className="section-title">Comment pouvons-nous vous aider ?</h2>
           <p className="section-desc">
-            Notre equipe est disponible pour repondre a toutes vos questions et vous accompagner.
+            Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner.
           </p>
         </div>
 
@@ -341,7 +341,7 @@ function App() {
               </div>
               <div className="support-channel-body">
                 <h3>Chat WhatsApp</h3>
-                <p>Discutez en direct avec notre equipe via WhatsApp. Reponse rapide garantie.</p>
+                <p>Discutez en direct avec notre équipe via WhatsApp. Réponse rapide garantie.</p>
                 <span className="support-channel-action">
                   Ouvrir WhatsApp <ArrowRight size={16} />
                 </span>
@@ -354,7 +354,7 @@ function App() {
               </div>
               <div className="support-channel-body">
                 <h3>Email</h3>
-                <p>Envoyez-nous un message detaille et nous vous repondrons dans les 24h.</p>
+                <p>Envoyez-nous un message détaillé et nous vous répondrons dans les 24h.</p>
                 <span className="support-channel-action">
                   Remplir le formulaire <ArrowRight size={16} />
                 </span>
@@ -372,7 +372,7 @@ function App() {
             {formSent && (
               <div className="support-form-success">
                 <CheckCircle size={20} />
-                Votre message a bien ete envoye. Notre equipe vous repondra sous 24h !
+                Votre message a bien été envoyé. Notre équipe vous répondra sous 24h !
               </div>
             )}
 
@@ -412,18 +412,18 @@ function App() {
               <input
                 id="support-subject"
                 type="text"
-                placeholder="Ex: Probleme de reservation, paiement..."
+                placeholder="Ex: Problème de réservation, paiement..."
                 value={supportForm.subject}
                 onChange={e => setSupportForm(f => ({ ...f, subject: e.target.value }))}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="support-message">Decrivez votre besoin <span className="form-required">*</span></label>
+              <label htmlFor="support-message">Décrivez votre besoin <span className="form-required">*</span></label>
               <textarea
                 id="support-message"
                 rows={5}
-                placeholder="Expliquez en detail votre probleme ou votre demande. Plus vous etes precis, plus nous pourrons vous aider efficacement."
+                placeholder="Expliquez en détail votre problème ou votre demande. Plus vous êtes précis, plus nous pourrons vous aider efficacement."
                 required
                 value={supportForm.message}
                 onChange={e => setSupportForm(f => ({ ...f, message: e.target.value }))}
@@ -447,13 +447,13 @@ function App() {
       {/* CTA */}
       <section className="cta" id="download">
         <div className="cta-card">
-          <h2>Pret a voyager avec Yonam ?</h2>
+          <h2>Prêt à voyager avec Yonam ?</h2>
           <p>
-            Rejoignez des milliers de voyageurs qui partagent deja leurs trajets au Senegal.
+            Rejoignez des milliers de voyageurs qui partagent déjà leurs trajets au Sénégal.
           </p>
           <button className="cta-btn">
             <Car size={20} />
-            Telecharger l'application
+            Télécharger l'application
           </button>
         </div>
       </section>
@@ -470,25 +470,25 @@ function App() {
                 <span className="logo-text" style={{ color: '#fff' }}>Yonam</span>
               </div>
               <p>
-                La plateforme de covoiturage qui connecte les villes du Senegal. Voyagez ensemble, partagez les frais.
+                La plateforme de covoiturage qui connecte les villes du Sénégal. Voyagez ensemble, partagez les frais.
               </p>
             </div>
 
             <div className="footer-col">
               <h4>Produit</h4>
               <ul>
-                <li><a href="#features">Fonctionnalites</a></li>
+                <li><a href="#features">Fonctionnalités</a></li>
                 <li><a href="#routes">Trajets</a></li>
-                <li><a href="#safety">Securite</a></li>
-                <li><a href="#download">Telecharger</a></li>
+                <li><a href="#safety">Sécurité</a></li>
+                <li><a href="#download">Télécharger</a></li>
               </ul>
             </div>
 
             <div className="footer-col">
               <h4>Entreprise</h4>
               <ul>
-                <li><a href="#">A propos</a></li>
-                <li><a href="#">Carrieres</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Carrières</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#support">Contact</a></li>
               </ul>
@@ -509,17 +509,17 @@ function App() {
             </div>
 
             <div className="footer-col">
-              <h4>Legal</h4>
+              <h4>Légal</h4>
               <ul>
                 <li><a href="#">CGU</a></li>
-                <li><a href="#">Politique de confidentialite</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
                 <li><a href="#">Politique d'annulation</a></li>
               </ul>
             </div>
           </div>
 
           <div className="footer-bottom">
-            <p>2026 Yonam. Tous droits reserves.</p>
+            <p>2026 Yonam. Tous droits réservés.</p>
             <div className="footer-socials">
               <a href="#" className="footer-social">
                 <Heart size={16} />

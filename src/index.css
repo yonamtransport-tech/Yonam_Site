@@ -1147,6 +1147,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: -1;
   border-radius: inherit;
   background: linear-gradient(
     125deg,
@@ -1164,6 +1165,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: -1;
   border-radius: inherit;
   pointer-events: none;
   box-shadow:
