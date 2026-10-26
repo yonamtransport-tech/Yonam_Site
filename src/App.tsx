@@ -512,7 +512,7 @@ function App() {
               <h4>Légal</h4>
               <ul>
                 <li><a href="#">CGU</a></li>
-                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="/confidentialite">Politique de confidentialité</a></li>
                 <li><a href="#">Politique d'annulation</a></li>
               </ul>
             </div>
