@@ -86,11 +86,9 @@ img {
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(255, 59, 132, 0.3);
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 .logo-text {
@@ -296,32 +294,6 @@ img {
   background: var(--primary-faded);
 }
 
-.hero-stats {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  margin-top: 60px;
-  padding-top: 40px;
-  border-top: 1px solid var(--border);
-}
-
-.hero-stat {
-  text-align: center;
-}
-
-.hero-stat-value {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-
-.hero-stat-label {
-  font-size: 14px;
-  color: var(--text-light);
-  font-weight: 500;
-}
-
 @media (max-width: 768px) {
   .hero {
     padding: 120px 20px 60px;
@@ -332,13 +304,6 @@ img {
   }
   .hero-subtitle {
     font-size: 16px;
-  }
-  .hero-stats {
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .hero-stat-value {
-    font-size: 24px;
   }
 }
 
@@ -669,6 +634,37 @@ img {
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
+}
+
+/* The eye blinks every few seconds and its pupil looks left and right */
+.safety-eye {
+  animation: blink 4s ease-in-out infinite;
+}
+
+.safety-eye circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: look 4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 44%, 52%, 100% { transform: scaleY(1); }
+  48% { transform: scaleY(0.1); }
+}
+
+@keyframes look {
+  0%, 10% { transform: translateX(0); }
+  20%, 34% { transform: translateX(-3px); }
+  60%, 74% { transform: translateX(3px); }
+  86%, 100% { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .safety-shield,
+  .safety-eye,
+  .safety-eye circle {
+    animation: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1503,13 +1499,116 @@ img {
   box-shadow: 0 6px 20px rgba(255, 59, 132, 0.35);
 }
 
-.legal-footer-link {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
+.legal-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.legal-footer-link:hover {
+.legal-footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.legal-footer-links a:hover {
   color: #fff;
+}
+
+.legal-row.two-cols {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+}
+
+/* Cancellation windows: the left border encodes how late the cancellation is */
+.cancel-windows {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.cancel-card {
+  border-radius: 16px;
+  border-left: 4px solid var(--success);
+  padding: 20px 22px;
+}
+
+.cancel-card.medium {
+  border-left-color: #F59E0B;
+}
+
+.cancel-card.late {
+  border-left-color: #EF4444;
+}
+
+.cancel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.cancel-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cancel-delay {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.cancel-split-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cancel-split {
+  flex: 1;
+  min-width: 140px;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.cancel-card.far .cancel-split.passenger,
+.cancel-card.late .cancel-split.driver {
+  background: #D1FAE5;
+}
+
+.cancel-card.medium .cancel-split {
+  background: #FEF3C7;
+}
+
+.cancel-card.late .cancel-split.passenger {
+  background: #FEE2E2;
+}
+
+.cancel-split-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  margin-bottom: 2px;
+}
+
+.cancel-split-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.legal-section .cancel-note {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 12px 0 0;
 }
 
 @media (max-width: 600px) {

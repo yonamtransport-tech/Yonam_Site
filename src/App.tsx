@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Car, MapPin, Shield, Users, Wallet, Star, ArrowRight, Menu, X, CircleCheck as CheckCircle, Phone, MessageCircle, Clock, Navigation, Heart, Mail, Send } from 'lucide-react'
+import { Car, MapPin, Shield, Users, Wallet, Star, ArrowRight, Menu, X, CircleCheck as CheckCircle, Phone, MessageCircle, Clock, Navigation, Heart, Mail, Send, Eye } from 'lucide-react'
+import Logo from './Logo'
 
 const SUPPORT_EMAIL = 'support@yonam.sn'
 const WHATSAPP_NUMBER = '221XXXXXXXXX' // Remplacer par votre numéro WhatsApp (format international sans +)
@@ -53,12 +54,9 @@ function App() {
       {/* Header */}
       <header className={`header glass ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-inner">
-          <div className="logo">
-            <div className="logo-icon">
-              <Car size={22} color="#fff" />
-            </div>
-            <span className="logo-text">Yonam</span>
-          </div>
+          <a href="/" className="logo">
+            <Logo />
+          </a>
 
           <nav className={`nav-links ${menuOpen ? 'open glass' : ''}`}>
             <a href="#features" onClick={() => setMenuOpen(false)}>Fonctionnalités</a>
@@ -98,25 +96,6 @@ function App() {
               En savoir plus
               <ArrowRight size={18} />
             </a>
-          </div>
-
-          <div className="hero-stats">
-            <div className="hero-stat">
-              <div className="hero-stat-value">10 000+</div>
-              <div className="hero-stat-label">Utilisateurs actifs</div>
-            </div>
-            <div className="hero-stat">
-              <div className="hero-stat-value">50+</div>
-              <div className="hero-stat-label">Villes desservies</div>
-            </div>
-            <div className="hero-stat">
-              <div className="hero-stat-value">4.8/5</div>
-              <div className="hero-stat-label">Note moyenne</div>
-            </div>
-            <div className="hero-stat">
-              <div className="hero-stat-value">-60%</div>
-              <div className="hero-stat-label">Économies sur vos trajets</div>
-            </div>
           </div>
         </div>
       </section>
@@ -317,7 +296,7 @@ function App() {
 
           <div className="safety-visual">
             <div className="safety-shield">
-              <Shield size={48} color="#fff" />
+              <Eye size={56} color="#fff" className="safety-eye" />
             </div>
           </div>
         </div>
@@ -464,10 +443,7 @@ function App() {
           <div className="footer-top">
             <div className="footer-brand">
               <div className="logo">
-                <div className="logo-icon">
-                  <Car size={20} color="#fff" />
-                </div>
-                <span className="logo-text" style={{ color: '#fff' }}>Yonam</span>
+                <Logo light />
               </div>
               <p>
                 La plateforme de covoiturage qui connecte les villes du Sénégal. Voyagez ensemble, partagez les frais.
@@ -513,7 +489,7 @@ function App() {
               <ul>
                 <li><a href="#">CGU</a></li>
                 <li><a href="/confidentialite">Politique de confidentialité</a></li>
-                <li><a href="#">Politique d'annulation</a></li>
+                <li><a href="/conditions-annulation">Conditions d'annulation</a></li>
               </ul>
             </div>
           </div>
