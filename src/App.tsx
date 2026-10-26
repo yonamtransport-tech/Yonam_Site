@@ -112,7 +112,7 @@ function App() {
 
         <div className="features-grid">
           <div className="feature-card glass">
-            <div className="feature-icon pink">
+            <div className="feature-icon indigo">
               <MapPin size={24} />
             </div>
             <h3 className="feature-title">Trajets entre villes</h3>

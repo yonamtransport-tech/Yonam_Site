@@ -7,10 +7,10 @@
 }
 
 :root {
-  --primary: #FF3B84;
-  --primary-dark: #E6216D;
-  --primary-light: #FF85B3;
-  --primary-faded: #FFF0F6;
+  --primary: #6366F1;
+  --primary-dark: #4F46E5;
+  --primary-light: #A5B4FC;
+  --primary-faded: #EEF2FF;
   --text: #1A1A2E;
   --text-secondary: #4A4A6A;
   --text-light: #8E8EA0;
@@ -19,8 +19,8 @@
   --surface: #FFFFFF;
   --border: #E8E8F0;
   --success: #10B981;
-  --gradient-start: #FF3B84;
-  --gradient-end: #E6216D;
+  --gradient-start: #6366F1;
+  --gradient-end: #10B981;
 
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 16px;
@@ -124,12 +124,12 @@ img {
   font-weight: 600 !important;
   font-size: 14px !important;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 12px rgba(255, 59, 132, 0.25);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
 }
 
 .nav-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255, 59, 132, 0.35);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
 }
 
 .mobile-menu-btn {
@@ -179,7 +179,7 @@ img {
   width: 800px;
   height: 800px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 59, 132, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -266,12 +266,12 @@ img {
   border: none;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 8px 24px rgba(255, 59, 132, 0.3);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(255, 59, 132, 0.4);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.4);
 }
 
 .btn-secondary {
@@ -376,8 +376,8 @@ img {
   margin-bottom: 20px;
 }
 
-.feature-icon.pink {
-  background: rgba(255, 59, 132, 0.1);
+.feature-icon.indigo {
+  background: rgba(99, 102, 241, 0.1);
   color: var(--primary);
 }
 .feature-icon.green {
@@ -459,7 +459,7 @@ img {
   font-size: 22px;
   font-weight: 800;
   margin: 0 auto 20px;
-  box-shadow: 0 8px 20px rgba(255, 59, 132, 0.25);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
 }
 
 .step-title {
@@ -610,13 +610,13 @@ img {
 }
 
 .safety-visual {
-  background: linear-gradient(135deg, var(--primary-faded), rgba(255, 59, 132, 0.05));
+  background: linear-gradient(135deg, var(--primary-faded), rgba(99, 102, 241, 0.05));
   border-radius: 24px;
   padding: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 59, 132, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 .safety-shield {
@@ -627,7 +627,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 40px rgba(255, 59, 132, 0.25);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25);
   animation: float 3s ease-in-out infinite;
 }
 
@@ -793,8 +793,8 @@ img {
 }
 
 .support-channel-card.email {
-  background: linear-gradient(135deg, rgba(255, 59, 132, 0.07), rgba(255, 59, 132, 0.02));
-  border-color: rgba(255, 59, 132, 0.15);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.07), rgba(99, 102, 241, 0.02));
+  border-color: rgba(99, 102, 241, 0.15);
 }
 
 .support-channel-icon {
@@ -813,7 +813,7 @@ img {
 }
 
 .support-channel-card.email .support-channel-icon {
-  background: rgba(255, 59, 132, 0.12);
+  background: rgba(99, 102, 241, 0.12);
   color: var(--primary);
 }
 
@@ -942,7 +942,7 @@ img {
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 3px rgba(255, 59, 132, 0.1);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   background: var(--bg);
 }
 
@@ -1167,7 +1167,7 @@ img {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
     inset 0 -1px 0 rgba(255, 255, 255, 0.2),
-    inset 2px 0 0 rgba(255, 61, 133, 0.28),
+    inset 2px 0 0 rgba(99, 102, 241, 0.28),
     inset -2px 0 0 rgba(64, 170, 255, 0.28);
 }
 
@@ -1211,9 +1211,9 @@ img {
   height: 480px;
   background: radial-gradient(
     circle,
-    rgba(255, 59, 132, 0.4) 0%,
-    rgba(255, 59, 132, 0.32) 38%,
-    rgba(255, 59, 132, 0) 68%
+    rgba(99, 102, 241, 0.4) 0%,
+    rgba(99, 102, 241, 0.32) 38%,
+    rgba(99, 102, 241, 0) 68%
   );
 }
 
@@ -1256,9 +1256,9 @@ img {
   height: 440px;
   background: radial-gradient(
     circle,
-    rgba(255, 59, 132, 0.34) 0%,
-    rgba(255, 59, 132, 0.26) 38%,
-    rgba(255, 59, 132, 0) 68%
+    rgba(99, 102, 241, 0.34) 0%,
+    rgba(99, 102, 241, 0.26) 38%,
+    rgba(99, 102, 241, 0) 68%
   );
 }
 
@@ -1318,9 +1318,9 @@ img {
   height: 520px;
   background: radial-gradient(
     circle,
-    rgba(255, 59, 132, 0.3) 0%,
-    rgba(255, 59, 132, 0.22) 38%,
-    rgba(255, 59, 132, 0) 68%
+    rgba(99, 102, 241, 0.3) 0%,
+    rgba(99, 102, 241, 0.22) 38%,
+    rgba(99, 102, 241, 0) 68%
   );
 }
 
@@ -1394,7 +1394,7 @@ img {
   font-weight: 800;
   color: #fff;
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-  box-shadow: 0 4px 12px rgba(255, 59, 132, 0.25);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
 }
 
 .legal-section p,
@@ -1490,13 +1490,13 @@ img {
   border-radius: 10px;
   color: #fff;
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-  box-shadow: 0 4px 12px rgba(255, 59, 132, 0.25);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .legal-contact-email:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255, 59, 132, 0.35);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
 }
 
 .legal-footer-links {
