@@ -4,11 +4,12 @@ import Logo from './Logo'
 
 type LegalLayoutProps = {
   title: string
+  updated: string
   lede: ReactNode
   children: ReactNode
 }
 
-function LegalLayout({ title, lede, children }: LegalLayoutProps) {
+function LegalLayout({ title, updated, lede, children }: LegalLayoutProps) {
   useEffect(() => {
     document.title = `${title} - Yonam`
   }, [title])
@@ -33,7 +34,7 @@ function LegalLayout({ title, lede, children }: LegalLayoutProps) {
         <div className="legal-inner">
           <span className="section-tag">Document légal</span>
           <h1 className="legal-title">{title}</h1>
-          <p className="legal-meta">Dernière mise à jour : 26 octobre 2026 · Application Yonam, covoiturage au Sénégal</p>
+          <p className="legal-meta">Dernière mise à jour : {updated} · Application Yonam, covoiturage au Sénégal</p>
           <p className="legal-lede">{lede}</p>
           {children}
         </div>
@@ -47,6 +48,7 @@ function LegalLayout({ title, lede, children }: LegalLayoutProps) {
             <div className="legal-footer-links">
               <a href="/confidentialite">Politique de confidentialité</a>
               <a href="/conditions-annulation">Conditions d'annulation</a>
+              <a href="/suppression-compte">Supprimer mon compte</a>
               <a href="/">Accueil</a>
             </div>
           </div>

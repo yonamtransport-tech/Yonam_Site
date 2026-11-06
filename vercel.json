@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/confidentialite", "destination": "/index.html" },
-    { "source": "/conditions-annulation", "destination": "/index.html" }
+    { "source": "/conditions-annulation", "destination": "/index.html" },
+    { "source": "/suppression-compte", "destination": "/index.html" }
   ]
 }

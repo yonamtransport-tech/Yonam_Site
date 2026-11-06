@@ -490,6 +490,7 @@ function App() {
                 <li><a href="#">CGU</a></li>
                 <li><a href="/confidentialite">Politique de confidentialité</a></li>
                 <li><a href="/conditions-annulation">Conditions d'annulation</a></li>
+                <li><a href="/suppression-compte">Supprimer mon compte</a></li>
               </ul>
             </div>
           </div>

@@ -53,6 +53,7 @@ function PrivacyPolicy() {
   return (
     <LegalLayout
       title="Politique de confidentialité"
+      updated="26 octobre 2026"
       lede="Yonam met en relation des conducteurs et des passagers pour du covoiturage. Pour que ça marche — vous trouver un trajet, vérifier qui est qui, et vous payer en toute sécurité — l'application a besoin de certaines de vos données. Ce document dit lesquelles, pourquoi, et ce que vous pouvez en faire."
     >
       <section className="legal-section">

@@ -49,6 +49,7 @@ function CancellationPolicy() {
   return (
     <LegalLayout
       title="Conditions d'annulation"
+      updated="26 octobre 2026"
       lede="Le montant remboursé au passager et le dédommagement versé au chauffeur dépendent du moment où la réservation est annulée par rapport à l'heure de départ prévue, et de qui annule. Les frais de service Yonam ne sont jamais remboursés, quel que soit le délai."
     >
       <section className="legal-section">

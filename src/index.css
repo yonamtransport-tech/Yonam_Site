@@ -1408,7 +1408,8 @@ img {
   margin-bottom: 12px;
 }
 
-.legal-section ul {
+.legal-section ul,
+.legal-section ol {
   padding-left: 22px;
   margin-bottom: 12px;
 }
@@ -1419,6 +1420,11 @@ img {
 
 .legal-section li::marker {
   color: var(--primary);
+  font-weight: 700;
+}
+
+.legal-section .legal-contact {
+  margin-top: 16px;
 }
 
 .legal-table {
