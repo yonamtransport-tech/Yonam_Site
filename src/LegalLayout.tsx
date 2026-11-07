@@ -46,6 +46,7 @@ function LegalLayout({ title, updated, lede, children }: LegalLayoutProps) {
           <div className="footer-bottom">
             <p>2026 Yonam. Tous droits réservés.</p>
             <div className="legal-footer-links">
+              <a href="/cgu">CGU</a>
               <a href="/confidentialite">Politique de confidentialité</a>
               <a href="/conditions-annulation">Conditions d'annulation</a>
               <a href="/suppression-compte">Supprimer mon compte</a>

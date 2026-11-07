@@ -487,7 +487,7 @@ function App() {
             <div className="footer-col">
               <h4>Légal</h4>
               <ul>
-                <li><a href="#">CGU</a></li>
+                <li><a href="/cgu">CGU</a></li>
                 <li><a href="/confidentialite">Politique de confidentialité</a></li>
                 <li><a href="/conditions-annulation">Conditions d'annulation</a></li>
                 <li><a href="/suppression-compte">Supprimer mon compte</a></li>
