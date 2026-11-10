@@ -116,22 +116,6 @@ img {
   color: var(--primary);
 }
 
-.nav-cta {
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-  color: #fff !important;
-  padding: 10px 24px;
-  border-radius: 10px;
-  font-weight: 600 !important;
-  font-size: 14px !important;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
-}
-
-.nav-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
-}
-
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -719,27 +703,52 @@ img {
   z-index: 1;
 }
 
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff;
-  color: var(--primary-dark);
-  padding: 16px 32px;
-  border-radius: 14px;
-  font-weight: 700;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+/* App store download badges */
+.store-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
   position: relative;
   z-index: 1;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.cta-btn:hover {
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 200px;
+  padding: 10px 22px;
+  border-radius: 14px;
+  background: #000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.store-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.store-badge-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.store-badge-small {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.store-badge-name {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
 }
 
 @media (max-width: 600px) {
@@ -1017,7 +1026,7 @@ img {
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 40px;
   margin-bottom: 40px;
 }
@@ -1463,22 +1472,6 @@ img {
 
 .legal-row.head > div {
   color: var(--primary);
-}
-
-.legal-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 16px 0 20px;
-}
-
-.legal-pill {
-  font-size: 13px;
-  font-weight: 600;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: var(--primary-faded);
-  color: var(--primary-dark);
 }
 
 .legal-contact {

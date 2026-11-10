@@ -33,11 +33,11 @@ const PASSENGER_WINDOWS = [
 const REFUND_METHODS = [
   {
     situation: 'Remboursement intégral (chauffeur annule, ou passager annule >12h avant)',
-    method: "Tentative de remboursement réel vers le moyen de paiement mobile money utilisé (Wave, Orange Money). En cas d'échec, le montant est crédité sur le portefeuille Yonam du passager.",
+    method: 'Crédité automatiquement sur le compte mobile money utilisé pour payer (Wave, Orange Money ou autre).',
   },
   {
     situation: 'Remboursement partiel (annulation entre 2h et 12h)',
-    method: 'Crédité sur le portefeuille Yonam du passager, retirable à tout moment vers Wave ou Orange Money.',
+    method: 'Crédité automatiquement sur le compte mobile money utilisé pour payer (Wave, Orange Money ou autre).',
   },
   {
     situation: 'Dédommagement du chauffeur',
@@ -49,8 +49,8 @@ function CancellationPolicy() {
   return (
     <LegalLayout
       title="Conditions d'annulation"
-      updated="26 octobre 2026"
-      lede="Le montant remboursé au passager et le dédommagement versé au chauffeur dépendent du moment où la réservation est annulée par rapport à l'heure de départ prévue, et de qui annule. Les frais de service Yonam ne sont jamais remboursés, quel que soit le délai."
+      updated="7 novembre 2026"
+      lede="Le montant remboursé au passager et le dédommagement versé au chauffeur dépendent du moment où la réservation est annulée par rapport à l'heure de départ prévue, et de qui annule. Les frais de service Yonam (7 % du prix du trajet) ne sont pas remboursés quand c'est le passager qui annule, quel que soit le délai. Tous les remboursements sont crédités automatiquement sur le compte mobile money utilisé pour payer."
     >
       <section className="legal-section">
         <h2><span className="legal-num">1</span> Si le passager annule</h2>
@@ -83,8 +83,8 @@ function CancellationPolicy() {
           <div className="cancel-split-label">Passager reçoit</div>
           <div className="cancel-split-value">100 %</div>
           <p className="cancel-note">
-            Quel que soit le délai, si c'est le chauffeur qui annule, le passager est intégralement remboursé.
-            Les frais de service Yonam restent dus par le chauffeur, qui les règle à même son solde si celui-ci
+            Quel que soit le délai, si c'est le chauffeur qui annule, le passager est intégralement remboursé,
+            frais de service compris. Les frais de service Yonam restent dus par le chauffeur, qui les règle à même son solde si celui-ci
             le permet, ou qui reste redevable de la différence.
           </p>
         </div>

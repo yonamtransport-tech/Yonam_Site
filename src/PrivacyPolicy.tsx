@@ -3,161 +3,122 @@ import LegalLayout from './LegalLayout'
 
 const SUPPORT_EMAIL = 'support@yonam.sn'
 
-const DATA_CATEGORIES = [
-  {
-    category: 'Compte',
-    examples: 'Nom complet, numéro de téléphone, e-mail, mot de passe, date de naissance, photo de profil, profession, bio',
-    purpose: 'Créer et sécuriser votre compte, vous présenter aux autres utilisateurs',
-  },
-  {
-    category: 'Localisation',
-    examples: 'Position GPS au moment de la recherche, de la réservation et pendant un trajet en cours',
-    purpose: "Trouver des trajets près de vous, afficher le point de prise en charge, confirmer l'arrivée à destination",
-  },
-  {
-    category: "Vérification d'identité",
-    examples: "Photo d'une pièce d'identité officielle et un selfie (facultatif)",
-    purpose: 'Confirmer votre identité pour renforcer la confiance entre membres — traité par un prestataire tiers spécialisé, voir section 4',
-  },
-  {
-    category: 'Véhicule',
-    examples: "Marque, modèle, couleur, plaque d'immatriculation, photos du véhicule (chauffeurs)",
-    purpose: 'Permettre aux passagers de reconnaître le véhicule avant de monter',
-  },
-  {
-    category: 'Paiement',
-    examples: 'Numéro de mobile money (Wave, Orange Money), historique des transactions, solde du portefeuille interne',
-    purpose: 'Encaisser les réservations, reverser les chauffeurs, traiter les retraits et remboursements — via un prestataire de paiement tiers, voir section 4',
-  },
-  {
-    category: "Usage de l'app",
-    examples: "Trajets publiés et réservés, messages entre utilisateurs, avis et notes, tickets d'assistance, alertes SOS",
-    purpose: 'Faire fonctionner les réservations, la messagerie, la notation et le support',
-  },
-  {
-    category: 'Appareil',
-    examples: "Identifiant de notification push, type d'appareil",
-    purpose: 'Vous envoyer des notifications (nouvelle réservation, message, confirmation de paiement...)',
-  },
+const COLLECTED_DATA = [
+  'Les informations de votre compte (nom, numéro de téléphone, adresse email, photo de profil)',
+  'Votre position, pour vous proposer des trajets proches et permettre le suivi en temps réel pendant un trajet',
+  "Vos documents d'identité et un selfie lors de la vérification de profil, traités par notre prestataire de vérification d'identité (voir section 3)",
+  'Les informations de votre véhicule si vous êtes conducteur',
+  'Les informations nécessaires au paiement, traitées par notre prestataire de paiement : nous ne stockons jamais vos identifiants bancaires ou mobile money',
+  "Votre historique d'utilisation de l'application",
+  'Des informations techniques sur votre appareil et un jeton de notification push',
 ]
 
 const PROVIDERS = [
-  'Supabase — hébergement & base de données',
-  "Smile Identity — vérification d'identité",
-  'PayTech — paiements mobile money',
-  'Mapbox / Google Maps — cartographie et itinéraires',
-  'Expo — notifications push',
+  { name: 'Supabase', role: 'hébergement de la base de données et authentification' },
+  { name: 'Smile Identity', role: "vérification d'identité (pièce officielle et selfie)" },
+  { name: 'Intech', role: 'traitement des paiements, remboursements et virements mobile money' },
+  { name: 'Mapbox et Google Maps', role: 'cartographie, itinéraires et géolocalisation' },
+  { name: 'Expo', role: "infrastructure technique de l'application et notifications push" },
 ]
 
 function PrivacyPolicy() {
   return (
     <LegalLayout
       title="Politique de confidentialité"
-      updated="26 octobre 2026"
-      lede="Yonam met en relation des conducteurs et des passagers pour du covoiturage. Pour que ça marche — vous trouver un trajet, vérifier qui est qui, et vous payer en toute sécurité — l'application a besoin de certaines de vos données. Ce document dit lesquelles, pourquoi, et ce que vous pouvez en faire."
+      updated="9 novembre 2026"
+      lede="Cette politique explique quelles données Yonam collecte, avec qui elles sont partagées, combien de temps elles sont conservées et quels sont vos droits."
     >
       <section className="legal-section">
-        <h2><span className="legal-num">1</span> Qui nous sommes</h2>
+        <h2><span className="legal-num">1</span> Données que nous collectons</h2>
+        <p>Pour fonctionner, Yonam collecte :</p>
+        <ul>
+          {COLLECTED_DATA.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
         <p>
-          Yonam est une application mobile de covoiturage opérant au Sénégal et en Afrique de l'Ouest. Cette
-          politique s'applique à l'application mobile et à tout service associé. Pour toute question, voir la
-          section Contact en bas de page.
+          Si vous déclenchez une alerte SOS, votre position est partagée avec l'équipe Yonam tant que l'alerte est
+          active, y compris lorsque votre écran est verrouillé, pendant 2 heures au maximum. Une notification reste
+          affichée pendant ce suivi, et ces positions sont supprimées après 30 jours.
+        </p>
+        <p>
+          Vous pouvez enregistrer jusqu'à 3 contacts de confiance (nom et numéro de téléphone) : si vous déclenchez
+          une alerte SOS, ils reçoivent un SMS avec le trajet, le nom du chauffeur, le véhicule et un lien pour suivre
+          votre position.
+        </p>
+        <p>
+          Si vous partagez votre trajet, toute personne disposant du lien voit pendant 24 heures le trajet, le
+          chauffeur, le véhicule et la position de la voiture pendant la course ; lors d'une alerte SOS, ce lien
+          montre aussi votre position tant que l'alerte est active.
         </p>
       </section>
 
       <section className="legal-section">
-        <h2><span className="legal-num">2</span> Les données que nous collectons</h2>
-        <p>Nous ne collectons que ce dont l'application a besoin pour fonctionner :</p>
-        <div className="legal-table glass">
-          <div className="legal-row head">
-            <div>Catégorie</div>
-            <div>Exemples</div>
-            <div>Pourquoi</div>
-          </div>
-          {DATA_CATEGORIES.map((row) => (
-            <div className="legal-row" key={row.category}>
-              <div>{row.category}</div>
-              <div>{row.examples}</div>
-              <div>{row.purpose}</div>
-            </div>
-          ))}
-        </div>
+        <h2><span className="legal-num">2</span> Ce que nous ne faisons pas</h2>
+        <p>
+          Nous ne vendons jamais vos données personnelles à des tiers. Vos documents d'identité ne sont pas conservés
+          au-delà du processus de vérification : une fois votre profil vérifié, seul le résultat (vérifié ou non) est
+          conservé, pas les documents eux-mêmes.
+        </p>
       </section>
 
       <section className="legal-section">
-        <h2><span className="legal-num">3</span> Ce que nous ne faisons pas</h2>
+        <h2><span className="legal-num">3</span> Prestataires tiers</h2>
+        <p>
+          Pour fonctionner, Yonam s'appuie sur des prestataires spécialisés qui traitent certaines données en notre
+          nom :
+        </p>
         <ul>
-          <li>Nous ne vendons pas vos données à des tiers.</li>
-          <li>Nous ne partageons votre position en temps réel qu'avec le chauffeur ou le passager concerné par votre trajet, et avec les secours en cas d'alerte SOS.</li>
-          <li>Les documents d'identité fournis pour la vérification ne sont pas conservés par Yonam au-delà du processus de vérification lui-même.</li>
-        </ul>
-      </section>
-
-      <section className="legal-section">
-        <h2><span className="legal-num">4</span> Avec qui nous partageons des données</h2>
-        <p>Certaines fonctions s'appuient sur des prestataires spécialisés, qui ne voient que ce dont ils ont besoin pour leur tâche :</p>
-        <div className="legal-pills">
           {PROVIDERS.map((provider) => (
-            <span className="legal-pill" key={provider}>{provider}</span>
+            <li key={provider.name}><strong>{provider.name}</strong> : {provider.role}</li>
           ))}
-        </div>
-        <p>
-          Chacun de ces prestataires traite vos données uniquement pour le compte de Yonam et dans le cadre de
-          ses propres engagements de confidentialité. Nous pouvons également partager des données avec les
-          autorités compétentes si la loi l'exige.
-        </p>
-      </section>
-
-      <section className="legal-section">
-        <h2><span className="legal-num">5</span> Combien de temps nous les gardons</h2>
-        <p>
-          Vos données de compte sont conservées tant que votre compte existe. Si vous supprimez votre compte,
-          vos données personnelles sont effacées, à l'exception des informations que nous devons conserver pour
-          des obligations légales ou comptables (par exemple l'historique des transactions financières).
-        </p>
-      </section>
-
-      <section className="legal-section">
-        <h2><span className="legal-num">6</span> Vos droits</h2>
-        <p>Vous pouvez à tout moment :</p>
-        <ul>
-          <li>Consulter et modifier vos informations de profil directement dans l'application</li>
-          <li>Demander une copie des données que nous détenons sur vous</li>
-          <li>Demander la suppression de votre compte et de vos données personnelles</li>
-          <li>Retirer votre consentement à la vérification d'identité ou à la géolocalisation (certaines fonctions de l'app peuvent alors ne plus être disponibles)</li>
         </ul>
-        <p>Pour exercer ces droits, contactez-nous à l'adresse ci-dessous.</p>
       </section>
 
       <section className="legal-section">
-        <h2><span className="legal-num">7</span> Sécurité</h2>
+        <h2><span className="legal-num">4</span> Conservation des données</h2>
         <p>
-          Les mots de passe sont chiffrés, les connexions à l'application sont sécurisées (HTTPS/TLS), et l'accès
-          aux données est limité par des règles de permission au niveau de la base de données. Aucun système
-          n'est invulnérable à 100 %, mais nous prenons des mesures raisonnables pour protéger vos informations.
+          Vos données sont conservées aussi longtemps que votre compte est actif. Si vous supprimez votre compte, vos
+          données personnelles sont supprimées ou anonymisées, à l'exception de ce que la loi nous oblige à conserver
+          (par exemple l'historique des transactions financières, pour des raisons comptables et légales).
         </p>
       </section>
 
       <section className="legal-section">
-        <h2><span className="legal-num">8</span> Âge minimum</h2>
+        <h2><span className="legal-num">5</span> Vos droits</h2>
         <p>
-          Yonam implique des trajets réels et des paiements réels : l'application est destinée aux personnes
-          majeures (18 ans et plus). Nous ne collectons pas sciemment de données auprès de mineurs.
+          Vous pouvez à tout moment demander à accéder à vos données, les faire corriger, ou demander la suppression
+          de votre compte et de vos données personnelles, en nous contactant à l'adresse ci-dessous. Voir aussi notre
+          page <a href="/suppression-compte">Supprimer mon compte</a>.
         </p>
       </section>
 
       <section className="legal-section">
-        <h2><span className="legal-num">9</span> Modifications de cette politique</h2>
+        <h2><span className="legal-num">6</span> Sécurité</h2>
         <p>
-          Nous pouvons mettre à jour cette politique pour refléter des changements dans l'application ou dans
-          la réglementation. La date de dernière mise à jour en haut de page sera actualisée en conséquence.
+          Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données
+          contre l'accès non autorisé, la perte ou la divulgation. Les échanges entre l'application et nos serveurs
+          sont chiffrés.
         </p>
       </section>
 
       <section className="legal-section">
-        <h2><span className="legal-num">10</span> Contact</h2>
+        <h2><span className="legal-num">7</span> Âge minimum</h2>
+        <p>Yonam est réservé aux personnes âgées de 18 ans ou plus.</p>
+      </section>
+
+      <section className="legal-section">
+        <h2><span className="legal-num">8</span> Modifications de cette politique</h2>
+        <p>
+          Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. En cas de changement
+          important, vous en serez informé dans l'application.
+        </p>
+      </section>
+
+      <section className="legal-section">
+        <h2><span className="legal-num">9</span> Contact</h2>
         <div className="legal-contact glass">
-          <p>Pour toute question sur cette politique ou sur vos données :</p>
+          <p>Pour toute question relative à cette politique ou à vos données personnelles :</p>
           <a href={`mailto:${SUPPORT_EMAIL}`} className="legal-contact-email">
             <Mail size={18} />
             {SUPPORT_EMAIL}

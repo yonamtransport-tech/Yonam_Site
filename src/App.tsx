@@ -1,9 +1,17 @@
 import { useState, useEffect } from 'react'
-import { Car, MapPin, Shield, Users, Wallet, Star, ArrowRight, Menu, X, CircleCheck as CheckCircle, Phone, MessageCircle, Clock, Navigation, Heart, Mail, Send, Eye } from 'lucide-react'
+import { MapPin, Shield, Wallet, Star, ArrowRight, Menu, X, CircleCheck as CheckCircle, Phone, MessageCircle, Clock, Navigation, Mail, Send, Eye } from 'lucide-react'
 import Logo from './Logo'
+import StoreBadges from './StoreBadges'
 
-const SUPPORT_EMAIL = 'support@yonam.sn'
-const WHATSAPP_NUMBER = '221XXXXXXXXX' // Remplacer par votre numéro WhatsApp (format international sans +)
+const WHATSAPP_NUMBER = '221782322112' // 78 232 21 12
+
+// Liens des réseaux sociaux (pied de page). Remplacer '#' par l'adresse du compte.
+const SOCIAL_LINKS = {
+  instagram: '#',
+  tiktok: '#',
+  facebook: '#',
+  x: '#',
+}
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -64,7 +72,6 @@ function App() {
             <a href="#routes" onClick={() => setMenuOpen(false)}>Trajets</a>
             <a href="#safety" onClick={() => setMenuOpen(false)}>Sécurité</a>
             <a href="#support" onClick={() => setMenuOpen(false)}>Support</a>
-            <a href="#download" className="nav-cta" onClick={() => setMenuOpen(false)}>Télécharger</a>
           </nav>
 
           <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
@@ -88,10 +95,6 @@ function App() {
             Partagez les frais, réduisez votre empreinte carbone et voyagez en toute confiance.
           </p>
           <div className="hero-ctas">
-            <a href="#download" className="btn-primary">
-              <Car size={20} />
-              Commencer maintenant
-            </a>
             <a href="#how-it-works" className="btn-secondary">
               En savoir plus
               <ArrowRight size={18} />
@@ -430,10 +433,7 @@ function App() {
           <p>
             Rejoignez des milliers de voyageurs qui partagent déjà leurs trajets au Sénégal.
           </p>
-          <button className="cta-btn">
-            <Car size={20} />
-            Télécharger l'application
-          </button>
+          <StoreBadges />
         </div>
       </section>
 
@@ -450,25 +450,7 @@ function App() {
               </p>
             </div>
 
-            <div className="footer-col">
-              <h4>Produit</h4>
-              <ul>
-                <li><a href="#features">Fonctionnalités</a></li>
-                <li><a href="#routes">Trajets</a></li>
-                <li><a href="#safety">Sécurité</a></li>
-                <li><a href="#download">Télécharger</a></li>
-              </ul>
-            </div>
 
-            <div className="footer-col">
-              <h4>Entreprise</h4>
-              <ul>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Carrières</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#support">Contact</a></li>
-              </ul>
-            </div>
 
             <div className="footer-col">
               <h4>Support</h4>
@@ -480,7 +462,7 @@ function App() {
                     WhatsApp
                   </a>
                 </li>
-                <li><a href={`mailto:${SUPPORT_EMAIL}`}>Email support</a></li>
+                <li><a href="#support-form">Email support</a></li>
               </ul>
             </div>
 
@@ -498,14 +480,27 @@ function App() {
           <div className="footer-bottom">
             <p>2026 Yonam. Tous droits réservés.</p>
             <div className="footer-socials">
-              <a href="#" className="footer-social">
-                <Heart size={16} />
+              <a href={SOCIAL_LINKS.instagram} className="footer-social" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4.5" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
               </a>
-              <a href="#" className="footer-social">
-                <Users size={16} />
+              <a href={SOCIAL_LINKS.tiktok} className="footer-social" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                </svg>
               </a>
-              <a href="#" className="footer-social">
-                <MessageCircle size={16} />
+              <a href={SOCIAL_LINKS.facebook} className="footer-social" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.6c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V22h3.4z" />
+                </svg>
+              </a>
+              <a href={SOCIAL_LINKS.x} className="footer-social" target="_blank" rel="noopener noreferrer" aria-label="X">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
             </div>
           </div>

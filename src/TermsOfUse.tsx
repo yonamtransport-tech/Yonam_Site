@@ -88,7 +88,7 @@ function TermsOfUse() {
           300 FCFA.
         </p>
         <p>
-          L'Application perçoit des frais de service sur chaque réservation. Le paiement du Passager est conservé
+          L'Application perçoit des frais de service de 7 % du prix du trajet sur chaque réservation. Le paiement du Passager est conservé
           par l'Application jusqu'à la fin du trajet, puis la part du Conducteur est versée dans son portefeuille
           Yonam. Le Conducteur peut retirer son solde vers son compte Wave ou Orange Money.
         </p>
@@ -98,13 +98,17 @@ function TermsOfUse() {
         <h2><span className="legal-num">7</span> Annulations</h2>
         <p>En cas d'annulation par le Passager :</p>
         <ul>
-          <li>Plus de 12 heures avant le départ : le prix du trajet est remboursé, hors frais de service, sur le portefeuille Yonam du Passager.</li>
+          <li>Plus de 12 heures avant le départ : le prix du trajet est remboursé, hors frais de service.</li>
           <li>Entre 12 heures et 2 heures avant le départ : la moitié du prix du trajet (hors frais de service) est remboursée au Passager, l'autre moitié est versée au Conducteur en compensation.</li>
           <li>Moins de 2 heures avant le départ, ou absence au rendez-vous : aucun remboursement, le Conducteur reçoit sa part.</li>
         </ul>
         <p>
+          Les remboursements au Passager sont crédités automatiquement sur le compte mobile money avec lequel il a
+          payé (Wave, Orange Money ou autre).
+        </p>
+        <p>
           En cas d'annulation par le Conducteur, les Passagers sont intégralement remboursés, frais de service
-          compris, sur le moyen de paiement utilisé. Les frais de service sont alors à la charge du Conducteur et
+          compris. Les frais de service sont alors à la charge du Conducteur et
           déduits de son portefeuille. Des annulations répétées par le Conducteur peuvent entraîner des pénalités
           ou la suspension du compte.
         </p>
