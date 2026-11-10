@@ -130,7 +130,7 @@ function App() {
             </div>
             <h3 className="feature-title">Paiement flexible</h3>
             <p className="feature-desc">
-              Payez en espèces, par Orange Money, Wave ou via le portefeuille intégré. Simple et sécurisé.
+              Payez par Wave, Orange Money ou Free Money. Votre paiement est conservé jusqu'à la fin du trajet.
             </p>
           </div>
 
