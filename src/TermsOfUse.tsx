@@ -103,8 +103,8 @@ function TermsOfUse() {
           <li>Moins de 2 heures avant le départ, ou absence au rendez-vous : aucun remboursement, le Conducteur reçoit sa part.</li>
         </ul>
         <p>
-          Ces remboursements sont crédités sur le portefeuille Yonam du Passager, qui peut les retirer à tout moment
-          vers son compte Wave, Orange Money ou Free Money.
+          Ces remboursements sont versés automatiquement sur le compte mobile money avec lequel le Passager a payé
+          (Wave, Orange Money ou Free Money).
         </p>
         <p>
           En cas d'annulation par le Conducteur, les Passagers sont intégralement remboursés, frais de service
