@@ -25,7 +25,7 @@ function PrivacyPolicy() {
   return (
     <LegalLayout
       title="Politique de confidentialité"
-      updated="9 novembre 2026"
+      updated="21 novembre 2026"
       lede="Cette politique explique quelles données Yonam collecte, avec qui elles sont partagées, combien de temps elles sont conservées et quels sont vos droits."
     >
       <section className="legal-section">
@@ -56,9 +56,17 @@ function PrivacyPolicy() {
       <section className="legal-section">
         <h2><span className="legal-num">2</span> Ce que nous ne faisons pas</h2>
         <p>
-          Nous ne vendons jamais vos données personnelles à des tiers. Vos documents d'identité ne sont pas conservés
-          au-delà du processus de vérification : une fois votre profil vérifié, seul le résultat (vérifié ou non) est
-          conservé, pas les documents eux-mêmes.
+          Nous ne vendons jamais vos données personnelles à des tiers. Yonam ne stocke pas vos documents d'identité
+          ni votre selfie : une fois votre profil vérifié, nous conservons uniquement le résultat de la vérification
+          (vérifié ou non), le type de pièce, le nom inscrit sur la pièce et la référence du dossier chez notre
+          prestataire. La photo de votre pièce et votre selfie restent chez Smile Identity, notre prestataire de
+          vérification, pendant une durée limitée fixée par ce dernier, puis sont supprimés.
+        </p>
+        <p>
+          Pendant cette période, un membre habilité de l'équipe Yonam peut consulter votre dossier de vérification
+          chez Smile Identity, uniquement en cas de besoin réel : suspicion de fraude ou d'usurpation d'identité,
+          incident ou litige lors d'un trajet, ou demande des autorités. Le dossier est consulté sans être copié ni
+          enregistré dans Yonam, et chaque consultation est journalisée.
         </p>
       </section>
 
